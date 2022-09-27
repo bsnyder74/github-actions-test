@@ -1,0 +1,14 @@
+name: Brian
+age: 46
+address: 'Phoenix, AZ'
+active: true
+key:
+  key: value key2 22
+array:
+  - item1
+  - item2
+  - key: value
+jsonArray:
+  - item1
+  - item2
+  - item3
