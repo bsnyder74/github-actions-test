@@ -1,8 +1,22 @@
 name: Actions Workflow
 
 on:
-  repository_dispatch:
-    types: [build]
+  push:
+    branches:
+      - main
+      - 'feature/*' # matches feature/featA, feature/fetB, doesn't match feature/feat/a
+      - 'feature/**' # does match anything after feature/
+      - '!feature/featC' # ignore this branch, even if it matches a pattern
+    # branches-ignore:  (can't use both branches and ignore in the same job)
+    tags:
+      - v1
+      - v1.*
+    # tags-ignore:
+    paths:
+      - '**.js' # any js file pushed in our repo
+    # paths-ignore:
+  # repository_dispatch:
+  #   types: [build]
   # schedule:
     # - cron: "0/35 * * * *"
 
